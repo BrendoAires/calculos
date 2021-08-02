@@ -12,8 +12,8 @@ function Calcular (comprimento, largura){
 			
 			if (comp ==="" || larg ===""){
 			alert("Digite um valor");
+			}
 			
-			}	
 			
 		document.getElementById("comodo").value = ""
 		document.getElementById("comprimento").value = ""
@@ -24,7 +24,8 @@ function Calcular (comprimento, largura){
 		if (area <= 6){
 					
 					qtdPontoLuz;
-					potLuz = 100;					
+					potLuz = 100;		
+					
 		}
 		
 	else
@@ -39,12 +40,9 @@ function Calcular (comprimento, largura){
 											
 						}
 								
-												
 	
 		}
 	
-		
-		
 		const dados = `
 				<div class="resultado">
 							<ul>
@@ -57,11 +55,9 @@ function Calcular (comprimento, largura){
 				</div>
 		`;
 		
-		const resultado = document.getElementById("resultado");
-		resultado.innerHTML = dados;
-			
+		const resultado = document.getElementById("container-resultado");
+		resultado.innerHTML = dados;							
 		
-}
-
-
+		
 			
+		}

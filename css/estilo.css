@@ -80,13 +80,15 @@ ul li{
 }
 
 button{
+			margin-top:50px;
+			margin-bottom:50px;
 			width:250px;
 			background: #ff6915;
 			border-radius: 30px;
 }
 
 .resultado{
-			border: 0.1px solid  #ff6915;
+			border: 0.01rem solid  #ff6915;
 			border-radius: 10px;
 			width:350px;
 			margin: 0 auto;
