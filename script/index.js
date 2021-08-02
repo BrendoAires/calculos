@@ -15,15 +15,16 @@ function Calcular (comprimento, largura){
 			
 			}	
 			
-		
 		document.getElementById("comodo").value = ""
 		document.getElementById("comprimento").value = ""
 		document.getElementById("largura").value = ""
+		
+	
 			
 		if (area <= 6){
 					
-					console.log(qtdPontoLuz);
-					console.log(potLuz);
+					qtdPontoLuz;
+					potLuz = 100;					
 		}
 		
 	else
@@ -39,13 +40,9 @@ function Calcular (comprimento, largura){
 						}
 								
 												
+	
 		}
-		
-		/*document.getElementById("respComodo").innerHTML = comod;
-		document.getElementById("respArea").innerHTML = area + " m2"
-		document.getElementById("respPontoLuz").innerHTML = qtdPontoLuz
-		document.getElementById("respPotLuz").innerHTML = potLuz + " VA"
-		*/
+	
 		
 		
 		const dados = `
@@ -66,3 +63,5 @@ function Calcular (comprimento, largura){
 		
 }
 
+
+			
