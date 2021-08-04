@@ -92,5 +92,64 @@ button{
 			border-radius: 10px;
 			width:350px;
 			margin: 0 auto;
-		background: rgba(255,165,0, 0.1);
+		background: rgba(255,165,0, 0.5);
+}
+
+.custom-select{
+			position: relative;
+			width:350px;
+			margin: 0 auto;
+			margin-top: 20px;
+		
+}
+.custom-select select{
+			display:none;
+			
+}
+.select-selected{
+			background-color: #ff6915;
+			border-radius: 10px;
+}
+.select-selected:after{
+			position: absolute;
+			content:"";
+			top: 20px;
+			right:10px;
+			width:0;
+			height:0;
+			border: 6px solid transparent;
+			border-color:#fff transparent transparent transparent;
+			
+}
+.select-selected.select-arrow-active:after{
+			border-color: transparent transparent #fff transparent;
+			top:7px;
+}
+.selected-items div, .select-selected{
+			color: #ffffff;
+			padding: 10px 10px;
+			height: 20px;
+			border: 1px solid transparent;
+			border-color: transparent transparent rgba(0,0,0,0.1) transparent;
+			cursor:pointer;
+			
+}
+.select-items{
+			position: absolute;
+			background-color: black;
+
+			top:100%;
+			left:0;
+			right:0;			
+			z-index:99;
+			font-size:17px;
+			padding: 10px;
+			line-height:30px;
+			
+}
+.select-hide{
+			display:none;
+}
+.select-items div:hover, .same-as-selected{
+			background-color: rgba(0,0,0,0.1);
 }
