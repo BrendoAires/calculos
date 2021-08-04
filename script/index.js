@@ -45,7 +45,7 @@ function Calcular (comprimento, largura){
 				<div class="resultado">
 							<ul>
 					<p class="item"><li class="com">${comod}</li></p>
-					<p class="item"><li >Área</li><li class="h">${area}${" m2"}</li></p>
+					<p class="item"><li >Área</li><li class="h">${area}${" m<sup>2</sup>"}</li></p>
 					<p class="item"><li>Mínimo Pontos de Luz</li><li class="h">${qtdPontoLuz}</li></p>
 					<p class="item"><li>Potência</li><li class="h">${potLuz}${" VA"}</li> </p>
 				
