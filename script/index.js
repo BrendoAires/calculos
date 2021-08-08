@@ -1,6 +1,3 @@
-
-		
-
 function Calcular (comprimento, largura){
 	
 			const comod = document.getElementById("comodo").value;
@@ -40,6 +37,11 @@ function Calcular (comprimento, largura){
 								
 	
 		}
+	
+	var comboUnidade = document.getElementById("comboUnidade")
+	console.log(comboUnidade.selectedIndex);
+	console.log(comboUnidade.options[comboUnidade.selectedIndex].value);
+
 	
 		const dados = `
 				<div class="resultado">
