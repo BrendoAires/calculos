@@ -1,5 +1,3 @@
-
-
 function Calcular (comprimento, largura){
 	
 			const comod = document.getElementById("comodo").value;
@@ -18,29 +16,9 @@ function Calcular (comprimento, largura){
 		document.getElementById("comprimento").value = ""
 		document.getElementById("largura").value = ""
 		
-	
+
 			
-		if (area <= 6){
-					
-					var qtdPontoLuz = 1;
-					var potLuz = 100;		
-					
-		}
 		
-	else
-						if (area > 6){
-						/*A ABNT diz que em ambiente com menos de 6m2 o mínimo é 1 ponto de luz e uma potência estimada em 100VA. E a partir dos 6m2, 60VA a cada fração de 4m2. Então na prática, a partir dos 10m2 a potência aumenta para 160VA */
-								if (area >= 10){
-											var result = (area-6)/4;
-											var qtdPontoLuz = 1;
-											potLuz = (Math.trunc(result) * 60) + 100;
-									
-								
-											
-						}
-								
-	
-		}
 	
 	/*Combo box Unidades*/
 	
@@ -52,8 +30,48 @@ function Calcular (comprimento, largura){
 	if (comboUnidade.options[comboUnidade.selectedIndex].value == 0){
 						alert("Escolha a unidade de medida")
 			}
-			
+			 if (comboUnidade.selectedIndex = 1){
+	 			areaMetros = area / 1000000;
+	 }	
 					
+				if (comboUnidade.selectedIndex = 2){
+	 			areaMetros = area / 10000;
+	 }		
+	 
+	 if (comboUnidade.selectedIndex = 3){
+	 			areaMetros = area;
+	 }	
+	 
+	 if (comboUnidade.selectedIndex = 4){
+	 	const x = area / 1550
+	 	areaMetros= x.toFixed(5)
+	 }	
+	 
+	 
+	 if (areaMetros <= 6){
+					
+					var qtdPontoLuz = 1;
+					var potLuz = 100;		
+					
+		}
+		
+	else
+						if (areaMetros > 6){
+						/*A ABNT diz que em ambiente com menos de 6m2 o mínimo é 1 ponto de luz e uma potência estimada em 100VA. E a partir dos 6m2, 60VA a cada fração de 4m2. Então na prática, a partir dos 10m2 a potência aumenta para 160VA */
+								if (areaMetros >= 10){
+											var result = (areaMetros-6)/4;
+											var qtdPontoLuz = 1;
+											potLuz = (Math.trunc(result) * 60) + 100;
+									
+								
+											
+						}
+								
+	
+		}
+
+
+	 
 		document.getElementById("comodo").value = ""
 		document.getElementById("comprimento").value = ""
 		document.getElementById("largura").value = ""
@@ -63,7 +81,7 @@ function Calcular (comprimento, largura){
 				<div class="resultado">
 							<ul>
 					<p class="item"><li class="com">${comod}</li></p>
-				<p class="item"><li >Área</li><li class="h">${area} ${" "}${comboUnidade.options[comboUnidade.selectedIndex].value}<sup>2</sup></li></p>
+				<p class="item"><li >Área</li><li class="h">${areaMetros} ${" "}${"M"}<sup>2</sup></li></p>
 					<p class="item"><li>Mínimo Pontos de Luz</li><li class="h">${qtdPontoLuz}</li></p>
 					<p class="item"><li>Potência</li><li class="h">${potLuz}${" VA"}</li> </p>
 					
