@@ -18,7 +18,7 @@ function Calcular (comprimento, largura){
 		
 
 			
-		
+	/*	console.log(total.toString().replace(".", ","));*/
 	
 	/*Combo box Unidades*/
 	
@@ -44,7 +44,7 @@ function Calcular (comprimento, largura){
 	 
 	 if (comboUnidade.selectedIndex = 4){
 	 	const x = area / 1550
-	 	areaMetros= x.toFixed(5)
+	 	areaMetros= x.toFixed(3)
 	 }	
 	 
 	 
@@ -58,6 +58,11 @@ function Calcular (comprimento, largura){
 	else
 						if (areaMetros > 6){
 						/*A ABNT diz que em ambiente com menos de 6m2 o mínimo é 1 ponto de luz e uma potência estimada em 100VA. E a partir dos 6m2, 60VA a cada fração de 4m2. Então na prática, a partir dos 10m2 a potência aumenta para 160VA */
+						
+						var qtdPontoLuz = 1;
+					var potLuz = 100;		
+						
+						
 								if (areaMetros >= 10){
 											var result = (areaMetros-6)/4;
 											var qtdPontoLuz = 1;
@@ -81,7 +86,7 @@ function Calcular (comprimento, largura){
 				<div class="resultado">
 							<ul>
 					<p class="item"><li class="com">${comod}</li></p>
-				<p class="item"><li >Área</li><li class="h">${areaMetros} ${" "}${"M"}<sup>2</sup></li></p>
+				<p class="item"><li >Área</li><li class="h">${areaMetros.toString().replace(".", ",")} ${" "}${"M"}<sup>2</sup></li></p>
 					<p class="item"><li>Mínimo Pontos de Luz</li><li class="h">${qtdPontoLuz}</li></p>
 					<p class="item"><li>Potência</li><li class="h">${potLuz}${" VA"}</li> </p>
 					
