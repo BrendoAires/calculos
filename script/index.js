@@ -1,3 +1,5 @@
+
+
 function Calcular (comprimento, largura){
 	
 			const comod = document.getElementById("comodo").value;
@@ -8,6 +10,8 @@ function Calcular (comprimento, largura){
 			if (comp ==="" || larg ===""){
 			alert("Digite um valor");
 			}
+			
+			
 			
 			
 		document.getElementById("comodo").value = ""
@@ -38,31 +42,48 @@ function Calcular (comprimento, largura){
 	
 		}
 	
+	/*Combo box Unidades*/
+	
+	
 	var comboUnidade = document.getElementById("comboUnidade")
 	console.log(comboUnidade.selectedIndex);
 	console.log(comboUnidade.options[comboUnidade.selectedIndex].value);
 
-	
-		const dados = `
+	if (comboUnidade.options[comboUnidade.selectedIndex].value == 0){
+						alert("Escolha a unidade de medida")
+			}
+			
+					
+		document.getElementById("comodo").value = ""
+		document.getElementById("comprimento").value = ""
+		document.getElementById("largura").value = ""
+		
+			
+			const dados = `
 				<div class="resultado">
 							<ul>
 					<p class="item"><li class="com">${comod}</li></p>
-					<p class="item"><li >Área</li><li class="h">${area}${" m<sup>2</sup>"}</li></p>
+				<p class="item"><li >Área</li><li class="h">${area} ${" "}${comboUnidade.options[comboUnidade.selectedIndex].value}<sup>2</sup></li></p>
 					<p class="item"><li>Mínimo Pontos de Luz</li><li class="h">${qtdPontoLuz}</li></p>
 					<p class="item"><li>Potência</li><li class="h">${potLuz}${" VA"}</li> </p>
+					
 				
 							</ul>
 				</div>
 		`;
 		
 		const resultado = document.getElementById("container-resultado");
-		resultado.innerHTML = dados;							
+		resultado.innerHTML = dados;				
 		
 		
 			
 		}
 
-
+/*---------------------------*/
+/*---------------------------*/
+/*---------------------------*/
+/*---------------------------*/ 
+/* Combo box começa aqui*/
 
 var x, i, j, l, ll, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
@@ -144,4 +165,5 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
 
