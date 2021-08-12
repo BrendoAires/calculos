@@ -1,15 +1,19 @@
+
 function Calcular (comprimento, largura){
 	
+			
+		/*	const area = comp * larg;*/
 			const comod = document.getElementById("comodo").value;
 		 	const comp = document.getElementById("comprimento").value;
 			const larg = document.getElementById("largura").value;
-			const area = comp * larg;
-			
+						
 			if (comp ==="" || larg ===""){
 			alert("Digite um valor");
+			document.getElementById("container-resultado").style.display = "none";
 			}
 			
-			
+			else
+document.getElementById("container-resultado").style.display = "block";
 			
 			
 		document.getElementById("comodo").value = ""
@@ -31,7 +35,9 @@ function Calcular (comprimento, largura){
 						alert("Escolha a unidade de medida")
 			}
 			 if (comboUnidade.selectedIndex = 1){
+			 area = comp * larg
 	 			areaMetros = area / 1000000;
+	 			console.log(areaMetros)
 	 }	
 					
 				if (comboUnidade.selectedIndex = 2){
@@ -40,7 +46,7 @@ function Calcular (comprimento, largura){
 	 
 	 if (comboUnidade.selectedIndex = 3){
 	 			areaMetros = area;
-	 }	
+	 }
 	 
 	 if (comboUnidade.selectedIndex = 4){
 	 	const x = area / 1550
@@ -83,7 +89,7 @@ function Calcular (comprimento, largura){
 		
 			
 			const dados = `
-				<div class="resultado">
+				<div class="resultado" id = "resultado">
 							<ul>
 					<p class="item"><li class="com">${comod}</li></p>
 				<p class="item"><li >Área</li><li class="h">${areaMetros.toString().replace(".", ",")} ${" "}${"M"}<sup>2</sup></li></p>
