@@ -1,58 +1,82 @@
-
 function Calcular (comprimento, largura){
 	
-			
-		/*	const area = comp * larg;*/
+		
+		
 			const comod = document.getElementById("comodo").value;
-		 	const comp = document.getElementById("comprimento").value;
-			const larg = document.getElementById("largura").value;
-						
-			if (comp ==="" || larg ===""){
-			alert("Digite um valor");
-			document.getElementById("container-resultado").style.display = "none";
+		 	var comp = document.getElementById("comprimento").value;
+			var larg = document.getElementById("largura").value;
+			var comboUnidade = document.getElementById("comboUnidade")			
+		
+			
+			const calculaArea = function(){
+			area = comp * larg;
 			}
+
+
 			
-			else
-document.getElementById("container-resultado").style.display = "block";
+		
 			
-			
+			if  (comp ==="" || larg ===""){
+			alert("Insira todos os campos")
+			document.getElementById("container-resultado").style.display = "none";
 		document.getElementById("comodo").value = ""
 		document.getElementById("comprimento").value = ""
 		document.getElementById("largura").value = ""
 		
+}
+
+			else {
+
+document.getElementById("container-resultado").style.display = "block";
+			
+			}
 
 			
-	/*	console.log(total.toString().replace(".", ","));*/
+	
 	
 	/*Combo box Unidades*/
 	
 	
-	var comboUnidade = document.getElementById("comboUnidade")
-	console.log(comboUnidade.selectedIndex);
-	console.log(comboUnidade.options[comboUnidade.selectedIndex].value);
+	if (comboUnidade.options[comboUnidade.selectedIndex].value == ""){
+				alert("ghhi")
+	}
+	
 
-	if (comboUnidade.options[comboUnidade.selectedIndex].value == 0){
-						alert("Escolha a unidade de medida")
-			}
-			 if (comboUnidade.selectedIndex = 1){
-			 area = comp * larg
-	 			areaMetros = area / 1000000;
+		else if (comboUnidade.options[comboUnidade.selectedIndex].value == "M"){
+			
+				areaMetros = comp * larg;
+	 			console.log(areaMetros)
+
+	 }
+	
+			else if (comboUnidade.options[comboUnidade.selectedIndex].value == "mm"){
+			 calculaArea();
+			 const x = area / 1000000;
+	 			areaMetros = x.toFixed(4)
 	 			console.log(areaMetros)
 	 }	
 					
-				if (comboUnidade.selectedIndex = 2){
-	 			areaMetros = area / 10000;
+			else	if (comboUnidade.options[comboUnidade.selectedIndex].value == "cm"){
+				calculaArea();
+				const x = area / 10000;
+	 			areaMetros = x.toFixed(2)
+	 			
+	 			console.log(areaMetros)
 	 }		
 	 
-	 if (comboUnidade.selectedIndex = 3){
-	 			areaMetros = area;
-	 }
 	 
-	 if (comboUnidade.selectedIndex = 4){
-	 	const x = area / 1550
-	 	areaMetros= x.toFixed(3)
+	 
+	 			else if (comboUnidade.options[comboUnidade.selectedIndex].value == "pol"){
+	 			calculaArea();
+	 			const x = area / 1550
+	 			areaMetros= x.toFixed(2)
+	 			console.log(areaMetros)
 	 }	
 	 
+	 
+	
+	 console.log(comboUnidade.selectedIndex);
+	console.log(comboUnidade.options[comboUnidade.selectedIndex].value);
 	 
 	 if (areaMetros <= 6){
 					
@@ -61,12 +85,12 @@ document.getElementById("container-resultado").style.display = "block";
 					
 		}
 		
-	else
+else
 						if (areaMetros > 6){
-						/*A ABNT diz que em ambiente com menos de 6m2 o mínimo é 1 ponto de luz e uma potência estimada em 100VA. E a partir dos 6m2, 60VA a cada fração de 4m2. Então na prática, a partir dos 10m2 a potência aumenta para 160VA */
+					/*	ABNT diz que em ambiente com menos de 6m2 o mínimo é 1 ponto de luz e uma potência estimada em 100VA. E a partir dos 6m2, 60VA a cada fração de 4m2. Então na prática, a partir dos 10m2 a potência aumenta para 160VA */
 						
-						var qtdPontoLuz = 1;
-					var potLuz = 100;		
+					var	qtdPontoLuz = 1;
+					 var potLuz = 100;		
 						
 						
 								if (areaMetros >= 10){
@@ -89,10 +113,10 @@ document.getElementById("container-resultado").style.display = "block";
 		
 			
 			const dados = `
-				<div class="resultado" id = "resultado">
+				<div class="resultado">
 							<ul>
 					<p class="item"><li class="com">${comod}</li></p>
-				<p class="item"><li >Área</li><li class="h">${areaMetros.toString().replace(".", ",")} ${" "}${"M"}<sup>2</sup></li></p>
+				<p class="item"><li >Área</li><li class="h">${areaMetros} ${" "}${"M"}<sup>2</sup></li></p>
 					<p class="item"><li>Mínimo Pontos de Luz</li><li class="h">${qtdPontoLuz}</li></p>
 					<p class="item"><li>Potência</li><li class="h">${potLuz}${" VA"}</li> </p>
 					
