@@ -38,7 +38,7 @@ document.getElementById("container-resultado").style.display = "block";
 	
 	
 	if (comboUnidade.options[comboUnidade.selectedIndex].value == ""){
-				alert("ghhi")
+				alert("Escolha uma unidade de medida")
 	}
 	
 
@@ -84,6 +84,7 @@ document.getElementById("container-resultado").style.display = "block";
 					var potLuz = 100;		
 					
 		}
+		
 		
 else
 						if (areaMetros > 6){
